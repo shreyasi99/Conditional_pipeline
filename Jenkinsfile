@@ -1,5 +1,8 @@
 pipeline {
     agent any 
+   parameters {
+   choiceParam('choice',['ONE (default)','TWO'])
+    }
   stages {
     stage ('ONE choice') {
       when {

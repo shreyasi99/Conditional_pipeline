@@ -1,13 +1,21 @@
 pipeline {
-    agent any
-  stages{
-    stage('main-branch') {
-    when {
-        branch 'main'
+    agent any 
+  stages {
+    stage ('1 choice') {
+      when {
+                expression { choice == '1'}
+            }
+            steps {
+                echo "Hello, Choice 1!"
+            }
     }
-    steps {
-        echo 'run this stage - ony if the branch = main branch'
+    stage ('2 choice') {
+      when {
+                expression { choice == '2'}
+            }
+            steps {
+                echo "Hello, Choice 2!"
+            }
     }
-}
   }
 }

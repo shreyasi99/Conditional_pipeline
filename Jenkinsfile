@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage ('ONE choice') {
       when {
-                expression { choice == 'ONE'}
+                expression { $choice == 'ONE'}
             }
             steps {
                 echo "Hello, Choice ONE!"
@@ -11,7 +11,7 @@ pipeline {
     }
     stage ('TWO choice') {
       when {
-                expression { choice == 'TWO'}
+                expression { $choice == 'TWO'}
             }
             steps {
                 echo "Hello, Choice TWO!"

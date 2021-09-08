@@ -1,20 +1,20 @@
 pipeline {
     agent any 
   stages {
-    stage ('1 choice') {
+    stage ('ONE choice') {
       when {
-                expression { choice == '1'}
+                expression { choice == 'ONE'}
             }
             steps {
-                echo "Hello, Choice 1!"
+                echo "Hello, Choice ONE!"
             }
     }
-    stage ('2 choice') {
+    stage ('TWO choice') {
       when {
-                expression { choice == '2'}
+                expression { choice == 'TWO'}
             }
             steps {
-                echo "Hello, Choice 2!"
+                echo "Hello, Choice TWO!"
             }
     }
   }

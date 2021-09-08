@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage ('ONE choice') {
       when {
-                expression { ${param.choice} == 'ONE'}
+                expression { param.choice == 'ONE'}
             }
             steps {
                 echo "Hello, Choice ONE!"
@@ -11,7 +11,7 @@ pipeline {
     }
     stage ('TWO choice') {
       when {
-                expression { ${param.choice} == 'TWO'}
+                expression { param.choice == 'TWO'}
             }
             steps {
                 echo "Hello, Choice TWO!"

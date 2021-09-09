@@ -1,21 +1,20 @@
 pipeline {
-    agent any 
-  stages {
-    stage ('ONE choice') {
-      when {
-                expression { param.choice == 'ONE'}
-            }
+     stages {
+        stage ('Main Stage') {
             steps {
-                echo "Hello, Choice ONE!"
+                script {
+                    if (true) {
+                        stage ('Stage 1') {
+                            sh 'echo Stage 1'
+                        }
+                    }
+                    if (false) {
+                        stage ('Stage 2') {
+                            sh 'echo Stage 2'
+                        }
+                    }
+                }
             }
+        }
     }
-    stage ('TWO choice') {
-      when {
-                expression { param.choice == 'TWO'}
-            }
-            steps {
-                echo "Hello, Choice TWO!"
-            }
-    }
-  }
 }
